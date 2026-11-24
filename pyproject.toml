@@ -1,0 +1,26 @@
+[project]
+name = "policy-playground"
+version = "0.1.0"
+description = "Two CUGA agents for Oak Health Insurance, with and without policies"
+requires-python = ">=3.12"
+dependencies = [
+    "cuga>=0.4.5",
+    "cuga-oak-health==1.4.0",
+    "torch>=2.13.0 ; sys_platform == 'linux'",
+    "torchvision>=0.29.2 ; sys_platform == 'linux'",
+]
+
+# Scripts only, not an installable package.
+[tool.uv]
+package = false
+
+# CUGA needs torch>=2.13, which has no Intel-macOS wheels; it runs in a Linux
+# container (see Dockerfile). Use CPU-only torch there to skip CUDA libraries.
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
+torchvision = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
