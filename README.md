@@ -12,7 +12,7 @@ assistants for the fictional Oak Health Insurance, one without policies and one 
 | `playground/` | The assistants, the policies and the web page |
 | `space/` | The two files for a Hugging Face Space (Part 5) |
 
-Start with Part 1 of the tutorial. Every command runs through `./cuga-docker.sh`, for example:
+Start with Part 1 of the tutorial: [`docs/policy-playground-tutorial.html`](docs/policy-playground-tutorial.html). Download it and open it in a browser, or view it at [this page](https://htmlpreview.github.io/?https://github.com/adebiyi422/policy-playground/blob/main/docs/policy-playground-tutorial.html). Every command runs through `./cuga-docker.sh`, for example:
 
 ```bash
 ./cuga-docker.sh python llm_smoke.py
