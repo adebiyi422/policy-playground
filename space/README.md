@@ -14,4 +14,5 @@ Two [CUGA](https://github.com/cuga-project/cuga-agent) agents answer the same me
 Oak Health Insurance. Same model, same tools; only the right one has policies (approvals, guards,
 disclaimers and a playbook). Built by following the Policy Playground tutorial.
 
-Set these Space secrets: `OPENAI_API_KEY`, `OPENAI_BASE_URL`, `MODEL_NAME`.
+Set these in the Space's Settings: secrets `OPENAI_API_KEY` and `OPENAI_BASE_URL`, variable `MODEL_NAME`.
+For IBM Bob inference, also add the variable `AGENT_SETTING_CONFIG=settings.bob.toml` and start the key with `Apikey `.
